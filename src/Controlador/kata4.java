@@ -4,7 +4,7 @@ import Modelo.Histogram;
 import Modelo.Mail;
 import Vista.HistogramDisplay;
 import Vista.MailHistogramBuilder;
-import Vista.MailListReader;
+import Vista.MailListReaderBD;
 import java.io.IOException;
 import java.util.List;
 
@@ -12,11 +12,9 @@ public class kata4 {
 
     public static void main(String[] args) throws IOException {
 
-        MailListReader lecturaLista = new MailListReader();
+        MailListReaderBD lecturaLista = new MailListReaderBD();
 
-        String fileName = "email.txt";
-
-        List<Mail> mailList = lecturaLista.read(fileName);
+        List<Mail> mailList = lecturaLista.read();
 
         MailHistogramBuilder histogramBuild = new MailHistogramBuilder();
 
